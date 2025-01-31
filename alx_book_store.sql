@@ -1,28 +1,35 @@
+CREATE DATABASE alx_book_store;
+USE alx_book_store;
 CREATE TABLE Books(
-PRIMARY KEY (book_id),
+book_id INT PRIMARY KEY,
 title VARCHAR(130),
-FOREIGN KEY (author_id) REFERENCES Authors,
+author_id INT,
+FOREIGN KEY (author_id) REFERENCES Authors(author_id),
 price DOUBLE,
 publication_date DATE
 );
 CREATE TABLE Authors(
-PRIMARY KEY (author_id),
+author_id INT PRIMARY KEY,
 author_name VARCHAR(215)
 );
 CREATE TABLE Customers(
-PRIMARY KEY (customer_id),
+customer_id INT PRIMARY KEY,
 customer_name VARCHAR(215),
 email VARCHAR(215),
 address TEXT
 );
 CREATE TABLE Orders(
-PRIMARY KEY (order_id),
-FOREIGN KEY (customer_id) REFERENCES Customers,
+order_id INT PRIMARY KEY,
+customer_id INT,
+FOREIGN KEY (customer_id) 
+REFERENCES Customers(customer_id),
 order_date DATE
 );
 CREATE TABLE Order_Details(
-PRIMARY KEY (order_detail_id),
-FOREIGN KEY(order_id) REFERENCES Orders,
-FOREIGN KEY(book_id) REFERENCES Books,
+order_detail_id INT PRIMARY KEY,
+order_id INT,
+book_id INT,
+FOREIGN KEY(order_id) REFERENCES Orders(order_id),
+FOREIGN KEY(book_id) REFERENCES Books(book_id),
 quantity DOUBLE
 );
