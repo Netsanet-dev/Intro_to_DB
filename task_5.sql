@@ -1,3 +1,4 @@
+USE alx_book_store;
 INSERT INTO 
-alx_book_store.customer( customer_id, customer_name, email, address)
+customer( customer_id, customer_name, email, address)
 Values(1, "Cole Baidoo", "cbaidoo@sandtech.com", "123 Happiness Ave.");
