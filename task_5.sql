@@ -1,0 +1,3 @@
+INSERT INTO 
+alx_book_store.Customers( customer_id, customer_name, email, address)
+Values(1, "Cole Baidoo", "cbaidoo@sandtech.com", "123 Happiness Ave.");
