@@ -9,9 +9,12 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-mycursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
-print(mycursor)
-
+try:
+    mycursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(DB_NAME))
+except:
+    print("Database Not created.")
+else:
+    print(f"Database '{DB_NAME}' created successfully!")
 
 
 mydb.close()
