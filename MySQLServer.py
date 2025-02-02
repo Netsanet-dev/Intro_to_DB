@@ -1,6 +1,5 @@
 import mysql.connector
 
-DB_NAME = 'alx_book_store'
 
 mydb = mysql.connector.connect(
     host = 'localhost',
@@ -10,11 +9,11 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 try:
-    mycursor.execute("CREATE DATABASE IF NOT EXISTS {}".format(DB_NAME))
+    mycursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
 except:
     print("Database Not created.")
 else:
-    print(f"Database '{DB_NAME}' created successfully!")
+    print(f"Database 'alx_book_store' created successfully!")
 
 
 mydb.close()
